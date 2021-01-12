@@ -1,4 +1,4 @@
-package manager;
+package com.lazyben.accounting.manager;
 
 import com.lazyben.accounting.convert.p2c.UserInfoP2CConverter;
 import com.lazyben.accounting.dao.UserInfoDao;

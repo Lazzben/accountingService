@@ -1,4 +1,4 @@
-package com.lazyben.accounting.dao.mapper;
+package com.lazyben.accounting.dao;
 
 import com.lazyben.accounting.model.persistence.UserInfo;
 

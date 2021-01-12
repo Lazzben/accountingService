@@ -1,4 +1,4 @@
-package manager;
+package com.lazyben.accounting.manager;
 
 import com.lazyben.accounting.model.common.UserInfo;
 
