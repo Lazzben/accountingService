@@ -19,6 +19,10 @@ public class UserInfoP2CConverter extends Converter<UserInfo, com.lazyben.accoun
 
     @Override
     protected UserInfo doBackward(com.lazyben.accounting.model.common.UserInfo userInfo) {
-        return null;
+        return UserInfo.builder()
+                .id(userInfo.getId())
+                .username(userInfo.getUsername())
+                .password(userInfo.getPassword())
+                .build();
     }
 }
