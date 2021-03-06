@@ -2,7 +2,6 @@ package com.lazyben.accounting.convert.c2s;
 
 import com.google.common.base.Converter;
 import com.lazyben.accounting.model.common.UserInfo;
-import com.sun.istack.internal.NotNull;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
