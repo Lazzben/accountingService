@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserInfoMapper {
-    @Select("SELECT * FROM as_userinfo WHERE id = #{id}")
+    @Select("SELECT * FROM hcas_userinfo WHERE id = #{id}")
     UserInfo getUserInfoById(@Param("id") long id);
 }
