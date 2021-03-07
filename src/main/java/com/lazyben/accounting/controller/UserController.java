@@ -24,6 +24,11 @@ public class UserController {
         this.userInfoC2SConverter = userInfoC2SConverter;
     }
 
+    /**
+     * Get user information by specific id.
+     * @param id the user id.
+     * @return user info response entity.
+     */
     @GetMapping("/{id}")
     public ResponseEntity<?> getUserInfoById(@PathVariable("id") long id) {
         if (id <= 0L) {

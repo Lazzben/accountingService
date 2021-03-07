@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code = HttpStatus.BAD_REQUEST)
 public class InvalidParameterException extends ServiceException {
+    /**
+     * constructor for InvalidParameterException.
+     * @param message thrown message.
+     */
     public InvalidParameterException(String message) {
         super(message);
         this.setStatusCode(HttpStatus.BAD_REQUEST.value());
