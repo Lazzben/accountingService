@@ -2,7 +2,6 @@ package com.lazyben.accounting.controller;
 
 import com.lazyben.accounting.convert.c2s.UserInfoC2SConverter;
 import com.lazyben.accounting.exception.GlobalExceptionHandler;
-import com.lazyben.accounting.exception.InvalidParameterException;
 import com.lazyben.accounting.manager.UserInfoManager;
 import lombok.val;
 import org.junit.jupiter.api.AfterEach;
@@ -69,14 +68,12 @@ public class UserControllerTest {
         // Arrange
         val userId = -1L;
 
-        doThrow(new InvalidParameterException(String.format("User %s is not found", userId)))
-                .when(userInfoManager)
-                .getUserInfoById(anyLong());
-
         // Act & Assert                                                                                                                             {"code":"INVALID_PARAMETER","message":"User id -1 is invalid","statusCode":400,"errorType":"Client"}
         mockMvc.perform(MockMvcRequestBuilders.get("/" + userId))
                 .andExpect(status().is4xxClientError())
                 .andExpect(content().contentType("application/json"))
                 .andExpect(content().string("{\"code\":\"INVALID_PARAMETER\",\"message\":\"User id -1 is invalid\",\"statusCode\":400,\"errorType\":\"Client\"}"));
+
+        verify(userInfoManager, never()).getUserInfoById(anyLong());
     }
 }
